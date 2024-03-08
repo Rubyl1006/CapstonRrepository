@@ -42,7 +42,7 @@ def sleepNew():
     if form.validate_on_submit():
         startDT = dt.datetime.combine(form.sleep_date.data, form.starttime.data)
         endDT = dt.datetime.combine(form.wake_date.data, form.endtime.data)
-        diff = startDT - endDT
+        diff = endDT - startDT
         hours = diff.seconds/60/60
         newSleep = Sleep(
             hours = hours,
