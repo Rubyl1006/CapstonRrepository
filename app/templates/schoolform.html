@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <!--enctype is needed to upload files -->
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.school_name.label }}<br>
+            {{ form.school_name(size=64) }}<br>
+            {% for error in form.school_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.grade.label }}<br>
+            {{ form.grade() }}<br>
+            {% for error in form.grade.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.start_time.label }}<br>
+            {{ form.start_time() }}<br>
+            {% for error in form.start_time.errors %}
+            <span style="color:blueviolet">[{{error}}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.number_classes.label }}<br>
+            {{ form.number_classes() }}<br>
+            {% for error in form.number_classes.errors %}
+            <span style="color:aquamarine">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

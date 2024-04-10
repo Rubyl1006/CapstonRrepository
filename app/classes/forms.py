@@ -12,10 +12,11 @@ from wtforms_components import TimeField
 class ProfileForm(FlaskForm):
     fname = StringField('First Name', validators=[DataRequired()])
     lname = StringField('Last Name', validators=[DataRequired()]) 
+    age = IntegerField("age")
     image = FileField("Image") 
     submit = SubmitField('Post')
     role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
-
+    
 
 
 class ConsentForm(FlaskForm):
@@ -40,6 +41,13 @@ class BlogForm(FlaskForm):
     content = TextAreaField('Blog', validators=[DataRequired()])
     tag = StringField('Tag', validators=[DataRequired()])
     submit = SubmitField('Post!')
+
+class SchoolForm(FlaskForm):
+    school_name = StringField ('What is the name of your school?', validators=[DataRequired()])
+    grade = IntegerField('Your grade', validators=[DataRequired()])
+    start_time = TimeField('What time does your school start?', validators=[DataRequired()])
+    number_classes = IntegerField('How many classes do you have?', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):
     content = TextAreaField('Comment', validators=[DataRequired()])

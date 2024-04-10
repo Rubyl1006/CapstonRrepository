@@ -29,6 +29,7 @@ class User(UserMixin, Document):
     fname = StringField()
     lname = StringField()
     email = EmailField()
+    age = IntField()
     image = FileField()
     prononuns = StringField()
     adult_fname = StringField()
@@ -65,6 +66,18 @@ class Blog(Document):
     meta = {
         'ordering': ['-createdate']
     }
+
+class School(Document):
+    school_name = StringField()
+    grade = IntField()
+    start_time = DateTimeField()
+    number_classes = IntField()
+
+    meta = {
+        'ordering': ['school_info']
+    }
+
+
 
 class Comment(Document):
     # Line 63 is a way to access all the information in Course and Teacher w/o storing it in this class

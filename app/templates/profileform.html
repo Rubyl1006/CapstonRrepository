@@ -20,6 +20,13 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+        <p>
+            {{ form.age.label }}<br>
+            {{ form.age() }}<br>
+            {% for error in form.age.errors %}
+            <span style="color:blueviolet">[{{error}}]</span>
+            {% endfor %}
+        </p>
 
         <p>
             {{ form.image.label }}<br>

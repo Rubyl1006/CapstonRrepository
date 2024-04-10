@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% if school %}
+   
+    <br>
+   
+    <h1 class="display-5">{{school.school_name}}</h1>
+    Grade: {{school.grade}} <br>
+    StartTime: {{school.start_time}} <br>
+    Number of Classes: {{school.number_classes}} <br>
+        
+
+{% endif %}
+
+{% endblock %}
